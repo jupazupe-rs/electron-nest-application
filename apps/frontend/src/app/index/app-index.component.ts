@@ -7,11 +7,8 @@ import { AppBridge } from '../../config/bridge/app.bridge';
   styleUrls: ['./app-index.component.scss']
 })
 export class AppIndexComponent {
-  public healthCheckResult: any;
-
   public async healthCheck() {
     const result = await AppBridge.app.healthCheck();
     console.log(result);
-    this.healthCheckResult = result;
   }
 }
