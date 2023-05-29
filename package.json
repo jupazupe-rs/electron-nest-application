@@ -1,0 +1,37 @@
+{
+  "name": "myapp",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "author": "Juan Pablo Zuluaga <juan.zuluaga@rootstrap.com",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "main": "compilation/backend/main.js",
+  "scripts": {
+    "start": "run-p start:frontend wait:localhost",
+    "start:backend": "cd apps/backend && yarn start",
+    "start:frontend": "cd apps/frontend && yarn start",
+    "wait:localhost": "wait-on http://localhost:4200 && yarn start:backend",
+    "build": "run-s build:backend build:frontend",
+    "build:backend": "cd apps/backend && yarn build",
+    "build:frontend": "cd apps/frontend && yarn build",
+    "distribution": "yarn build && electron-builder -m"
+  },
+  "build": {
+    "productName": "MyApp",
+    "appId": "com.rootstrap.myapp",
+    "includeSubNodeModules": true,
+    "directories": {
+      "output": "distribution"
+    },
+    "mac": {
+      "category": "public.app-category.business"
+    }
+  },
+  "devDependencies": {
+    "electron-builder": "^23.6.0",
+    "wait-on": "^7.0.1",
+    "yarn-run-all": "^3.1.1"
+  }
+}

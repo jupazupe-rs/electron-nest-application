@@ -1,0 +1,12 @@
+# Dependencies
+node_modules
+
+# Compilation
+compilation
+distribution
+
+# Cache
+.angular
+
+# OS
+.DS_Store

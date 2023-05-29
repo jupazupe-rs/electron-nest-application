@@ -1,0 +1,39 @@
+{
+  "name": "@myapp/backend",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "author": "Juan Pablo Zuluaga <juan.zuluaga@rootstrap.com",
+  "main": "../../compilation/backend/main.js",
+  "scripts": {
+    "build": "nest build",
+    "electron": "electron .",
+    "start": "tsc-watch -p ./tsconfig.json --onSuccess 'yarn start:electron'",
+    "start:electron": "tsc-alias -p ./tsconfig.json && yarn electron"
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.3.2",
+    "@nestjs/core": "^9.0.0",
+    "@nestjs/microservices": "^9.4.2",
+    "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/terminus": "^9.2.2",
+    "module-alias": "^2.2.2",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "~7.8.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^9.0.0",
+    "@nestjs/schematics": "^9.0.0",
+    "@types/express": "^4.17.13",
+    "@types/node": "18.16.12",
+    "electron": "^24.4.0",
+    "electron-builder": "^23.6.0",
+    "source-map-support": "^0.5.20",
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.0.0",
+    "tsc-alias": "^1.8.6",
+    "tsc-watch": "^6.0.4",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "^5.0.2"
+  }
+}
